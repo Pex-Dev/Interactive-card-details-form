@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta description>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="description" content="Interactive card details form. Challenge by Frontend Mentor ">
+  <meta name="keywords" content="HTML, CSS, JavaScript, Waxupex, Form, Frontend Mentor">
+  <meta name="author" content="Waxupex">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Frontend Mentor | Interactive card details form</title>
+  
+</head>
+<body>
+  <main>
+    <div class="container">
+      <section class="cards__container">
+          <div class="card card--front"><!----------------------------------card start---------------------------------->
+            <div class="card-decoration">
+              <div class="card-decoration__circle"></div>
+              <div class="card-decoration__circle--small"></div>
+            </div>
+            <img class="card__image" src="images/bg-card-front.png" alt="credit card image front">
+            <div class="card__number position-absolute">
+              <p id="card_number">0000 0000 0000 0000</p>
+            </div>          
+            <div class="card__info position-absolute">
+              <p id="card_name">Jane Appleseed</p>
+              <div class="display-flex">
+                <p id="card_month">00</p><p>/</p><p id="card_year">00</p>
+              </div>
+            </div>
+          </div><!----------------------------------card end---------------------------------->
+          <div class="card card--back"><!----------------------------------card start---------------------------------->
+            <img class="card__image" src="images/bg-card-back.png" alt="credit card image back">
+            <p class="card__cvc position-absolute">000</p>
+          </div><!----------------------------------card end---------------------------------->
+      </section>
+      <form class="form" action="#"><!----------------------------------form start---------------------------------->
+        <label>
+          <p class="form__p">Cardholder Name</p>
+          <input class="form__name" type="text" placeholder="e.g. Jane Appleseed" maxlength="25">
+        </label>
+        <p class="error error--name hidden">XD</p>
+        <label>
+          <p class="form__p">Card Number</p>
+          <input class="form__number" type="text" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
+        </label>
+        <p class="error error--number hidden"></p>
+        <div class="info">
+          <div class="info__exp-date">
+            <label>
+              <p class="form__p">Exp. Date (MM/YY)</p>
+              <div class="info__exp-date__container">
+                <input class="form__month" type="number" placeholder="MM"  max="12" min="1">
+                <input class="form__year" type="number" placeholder="YY"  max="99" min="11">
+              </div>    
+            </label>
+            <p class="error error--exp-date hidden"></p>
+          </div>
+          <div class="info__cvc">
+            <label>
+              <p class="form__p">CVC</p>
+              <input class="info__cvc__input" type="number" maxlength="3" placeholder="e.g. 123">
+            </label>
+            <p class="error error--cvc hidden"></p>
+          </div>          
+        </div>
+        <input class="button" id="btn-submit" type="submit" value="Confirm">  
+      </form><!----------------------------------card end---------------------------------->
+      <!-- Completed state start -->
+      <div class="form-complete hidden">
+        <img class="form-complete__img" src="images/icon-complete.svg" alt="icon complete">
+        <h2 class="form-complete__h2">Thank you!</h2>
+        <p class="form-complete__p">We've added your card details</p>
+        <button class="form-complete__button button ">Continue</button>
+      </div>
+    </div>
+  </main>
+  <footer class="attribution">
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.</p>
+    <p>Coded by <a href="https://www.frontendmentor.io/profile/Waxupex">Waxupex</a>.</p>
+  </footer>
+<script src="js/app.js"></script>
+</body>
+</html>
